@@ -6,23 +6,24 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: long <admin@loveteemo.com>
+// | Author: long <1558319437@qq.com>
 // +----------------------------------------------------------------------
 return [
 
 	// +----------------------------------------------------------------------
 	// | 常用配置 这里的对其方式需要改成 tab
 	// +----------------------------------------------------------------------
-	'qqgroup'		=>	'4554660101',
+	'qqgroup'		=>	'1558319437',
 	'qqjoin'		=>	'http://jq.qq.com/?_wv=1027&k=dSjBgy',
 	'baiduurl'		=>	'http://koubei.baidu.com/w/loveteemo.com',
-	'githuburl'		=>	'https://github.com/loveteemo',
-	'weibourl'		=>	'http://weibo.com/iteemo',
-	'blogname'		=>	'青春博客',
+	'githuburl'		=>	'https://github.com/xiacao',
+	'weibourl'		=>	'https://weibo.com/xiacaov',
+	'blogname'		=>	'shemblog',
 	'framework'		=>	'ThinkPHP 5',
-	'author'		=>	'long',
+	'author'		=>	'shensai',
+	'csdn'		    =>	'https://blog.csdn.net/qq_16546829',
 	'docurl'		=>	'http://doc.loveteemo.com/',
-	'adminname'		=>	'隆航',
+	'adminname'		=>	'shensai',
 	'comview'		=>	1,
 	'dehits'		=>	5,
     'baiduapi'      =>  '73df7bf1e7ee3b02e8c1bf77c3f7c281',

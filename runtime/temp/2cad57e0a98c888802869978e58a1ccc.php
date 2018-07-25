@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"D:\wamp64\www\shemblog\public/../application/index\view\about_index.html";i:1532133089;s:67:"D:\wamp64\www\shemblog\public/../application/index\view\layout.html";i:1532133087;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"D:\wamp64\www\shemblog\public/../application/index\view\about_index.html";i:1532140212;s:67:"D:\wamp64\www\shemblog\public/../application/index\view\layout.html";i:1532181791;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -39,7 +39,7 @@
 <div class="container">
 
     <!--头部开始-->
-    <div class="row header">
+    <div class="row header" style="margin-bottom:-5px;">
         <div class="col-lg-4 col-md-4 header-logo">
             <a title="<?php echo \think\Config::get('NAME'); ?>" href="<?php echo url('Index/index'); ?>"><img src="home_img/icon/logo.png" /></a>
             <h5 class="hidden-xs"><?php echo $systeminfo['sys_title2']; ?></h5>
@@ -92,15 +92,16 @@
     <h4>关于我</h4><hr>
     <div class="about">
         <p><img class="image-light about-img thumbnail" src="/static/home/img/my.png"></p>
-        <p><strong>姓名</strong>：隆航</p>
-        <p><strong>网名</strong>：我是兴高采烈</p>
-        <p><strong>说明</strong> ：2012年开始接触代码,2013年初学习网页设计,至今快2年了.仍然是一个不折不扣菜鸟,喜欢在网络上寻找存在和分享自己的学习和经验.</p>
-        <p><strong>喜欢的话</strong>：人活着就是为了生存，而生存易生活难，每每很多问题困扰我的时候，我总是想着自己的网名：<a>我是兴高采烈</a>，然后让自己开开心心的过每一天，把不开心的事都一一过滤。每一天都有计划和学习，那样的日子才是最好的，不是么？</p>
+        <p><strong>姓名</strong>：沈赛</p>
+        <p><strong>网名</strong>：shem</p>
+        <p><strong>说明</strong> ：2015年开始接触代码-C语言,2016年学习前端,java,<br/>2017年学习了javaweb、php、python,至今快3年了.仍然是一个不折不扣菜鸟,喜欢在网络上寻找存在和分享自己的学习和经验.</p>
+        <p><strong>喜欢的话</strong>：我思故我在。</p>
+        <p><strong>想工作的岗位</strong>：前端工程师、php工程师、python、大数据。</p>
     </div>
     <div class="about-love">
-        <h4>关于程序</h4><hr>
-        <p><strong>原由</strong>：2013年底认识她,原由为她喜欢LOL的一个角色-提莫，大家给她起的外号为'提莫队长',然后当时在学习网页设计,就在准备给她做个网站来记录我们的爱情点滴,之后在开始筹备这个博客.从开始做网页设计到实际程序的跑起来，其中经历了几个版本的更迭,其中 z-blog,wp,杨青等优秀的个人博客都被我翻到过.直到我开始学习PHP之后,才发现自己的程序才是完全适合自己的.2015年初开始自己集合框架开始写网站的代码.2015年6月底开始第一个版本的测试,之后每隔一个月左右会把之前的网站打包,或者把更新的东西打包分享给交流群里的小伙伴,然后让对个人博客有兴趣的小伙伴,一起学习，一起进步。</p>
-        <p><strong>域名</strong>：www.loveteemo.com</p>
+        <h4>关于shemblog</h4><hr>
+        <p><strong>由来</strong>：shemblog原始版本来源于<a href="http://www.loveteemo.com">青春博客</a>，2016年初开始学习前端时就打算搭建自己的网站，当时利用GitHub搭建了几个静态页面，维护起来，很差劲，网速受限。2017年想重新购买域名开始搭建，在学习thinkphp5的过程中已经完成一个简陋的blog系统，当时忙于各种竞赛。暂停了一段时间。2018年，所以的比赛都结束了，钟玉婷、有时间了，开始购买阿里服务器，购买域名，备案。感觉自己之前的博客学习价值有限。索性网站自己找一个自己改，最先找的是<a>老张博客</a>，刚学习它的时候，觉得他该有的功能都有，逻辑清晰，页面也不错。但渐渐发现，其代码整体结构较为不合理，学习价值有限。修改起来有些麻烦，后来随着我的qq互联申请成功。索性还是使用<a href="http://www.loveteemo.com">青春博客</a>。青春博客前台页面很好看，但是本地调试有些问题。因为其前台后台需要qq互联登录，后台没有域名，设置了hosts也不行（qq互联升级了规则，），目前打算在青春博客的基础上，对其进行前后台的修复完善、重构。目前的版本我暂且称之为0.10版本。</p>
+        <p><strong>域名</strong>：<a href="http://shem.xin/">http://shem.xin/</a></p>
         <p><strong>创建时间</strong>：<?php echo $systeminfo['sys_createtime']; ?></p>
         <p><strong>评价</strong> ：<a href="<?php echo \think\Config::get('auth.baiduurl'); ?>" target="_blank">邀你点评</a></p>
         <p><strong>框架</strong> ：<a><?php echo \think\Config::get('auth.framework'); ?></a>
@@ -221,7 +222,7 @@
             <div class="col-md-3 ">
                 <h4>程序相关</h4>
                 <p class="foot-box">
-                    <i class="iconfont icon-group"></i>&nbsp;群：&nbsp;<a href="<?php echo \think\Config::get('auth.qqjoin'); ?>" target="_blank" class="foot-my">
+                    <i class="iconfont icon-group"></i>&nbsp;qq：&nbsp;<a href="<?php echo \think\Config::get('auth.qqjoin'); ?>" target="_blank" class="foot-my">
                     <strong><?php echo \think\Config::get('auth.qqgroup'); ?></strong>
                 </a>
                     <span class="foot-box-r">
@@ -232,7 +233,7 @@
                 <p class="foot-box">
                     <i class="iconfont icon-program"></i>&nbsp;程序：&nbsp;<?php echo \think\Config::get('auth.blogname'); ?>
                     <span class="foot-box-r">
-						<i class="iconfont icon-version"></i>&nbsp;版本：&nbsp;Beta <?php echo $systeminfo['sys_version']; ?>
+						<i class="iconfont icon-version"></i>&nbsp;版本：&nbsp; <?php echo $systeminfo['sys_version']; ?>
                     </span>
                 </p>
                 <p class="foot-box">

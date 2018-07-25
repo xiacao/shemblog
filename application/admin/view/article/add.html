@@ -61,6 +61,7 @@
                        <div class="upload"><input type="file" class="file" value="" /><label>上传图片</label></div>
                     </div>
                 </div>
+                
                 <div class="control-group">
                     <label class="control-label">描述</label>
                     <div class="controls">
@@ -203,9 +204,11 @@
             type    : "Post",
             dataType: "Json",
             url     : url,
+            async : true,
             success :function (data) {
+            
                 if(data.err==0){
-                    layer.msg(data.msg,{icon:1},function () {
+                    layer.msg(data.msg,{icon:1,time:1000},function () {
                         layer.closeAll();
                         location.href="{:url('Admin/Article/index')}";
                     });
@@ -213,6 +216,7 @@
                     layer.msg(data.msg,{icon:2,time:500});
                     _this.attr("disabled",false);
                 }
+               
             },
             error   :function () {
                 layer.msg('网络错误',{icon:2,time:500});

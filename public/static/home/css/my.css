@@ -19,7 +19,7 @@ pre{background-color:#fdf6e3 !important;}
 
 /*头部*/
 .header{margin:25px auto;display:block}
-.header-logo{padding-top:30px;margin:0 auto;text-align:center}
+.header-logo{padding-top:20px;margin:0 auto;text-align:center}
 .header-logo h5{display:inline-block;padding-left:20px}
 .header-logo img{vertical-align:text-bottom}
 .header-menu{margin-top:20px;float:right;padding-left:2px!important;padding-right:2px!important}
@@ -94,7 +94,7 @@ article h5 .reprint{display:inline-block;vertical-align:bottom;font-size:14px;co
 .sider-box{min-height:50px;width:100%;display:block;height:auto;overflow:hidden;padding:0 4px;}
 .btn-search{border-top-left-radius: 0;border-bottom-left-radius: 0;border-left: 0;}
 .sider-box h4{margin-bottom:15px;margin-left:15px}
-.sider-follow{width: 60%;height: 50px;margin: 0 auto}
+.sider-follow{width: 80%;height: 50px;margin: 0 auto}
 .sider-follow .iconfont{font-size: 40px;padding: 0 15px;padding-bottom: 10px;}
 .sider-follow-hr{border-bottom: 1px dashed #4cae4c;width: 90%;margin: 0 auto;padding: 5px;}
 .sider-search{width:95%;display:block;margin-bottom:20px}

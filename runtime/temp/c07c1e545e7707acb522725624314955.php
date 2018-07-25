@@ -1,13 +1,13 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"D:\wamp64\www\shemblog\public/../application/index\view\cate_index.html";i:1532133089;s:67:"D:\wamp64\www\shemblog\public/../application/index\view\layout.html";i:1532133087;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"D:\wamp64\www\shemblog\public/../application/index\view\cate_index.html";i:1532133089;s:67:"D:\wamp64\www\shemblog\public/../application/index\view\layout.html";i:1532508523;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <title><?php echo $title; ?> - <?php echo $systeminfo['sys_title']; ?></title>
-    <meta name="keywords" content="<?php echo $systeminfo['sys_keyword']; ?>" />
-    <meta name="description" content="<?php echo $systeminfo['sys_remark']; ?>" />
-    <meta name="version" content="v <?php echo $systeminfo['sys_version']; ?>" />
-    <meta name="author" content="<?php echo \think\Config::get('auth.author'); ?>"/>
+    <meta name="keywords" content="<?php echo $systeminfo['sys_keyword']; ?>" >
+    <meta name="description" content="<?php echo $systeminfo['sys_remark']; ?>" >
+    <meta name="version" content="v <?php echo $systeminfo['sys_version']; ?>" >
+    <meta name="author" content="<?php echo \think\Config::get('auth.author'); ?>">
     <!--移动设备优先-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="home_css/bootstrap.css?v=<?php echo $systeminfo['sys_version']; ?>" />
     <link rel="stylesheet" href="home_css/my.css?v=<?php echo $systeminfo['sys_version']; ?>" />
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1477105914_3430886.css">
-
+     <link rel="stylesheet" href="home_css/iconfont.css">
     <script src="home_js/jquery-1.10.1.min.js" ></script>
 </head>
 <body>
@@ -39,7 +39,7 @@
 <div class="container">
 
     <!--头部开始-->
-    <div class="row header">
+    <div class="row header" style="margin-bottom:-5px;">
         <div class="col-lg-4 col-md-4 header-logo">
             <a title="<?php echo \think\Config::get('NAME'); ?>" href="<?php echo url('Index/index'); ?>"><img src="home_img/icon/logo.png" /></a>
             <h5 class="hidden-xs"><?php echo $systeminfo['sys_title2']; ?></h5>
@@ -139,6 +139,7 @@
                     </div>
                 </div>
                 <div class="sider-follow hidden-xs sider-margin">
+                    <a href="<?php echo \think\Config::get('auth.csdn'); ?>" target="_blank"> <i class="icon iconfont icon-csdn"></i></a>
                     <a href="<?php echo \think\Config::get('auth.githuburl'); ?>" target="_blank"><i class="iconfont icon-github"></i></a>
                     <a><i class="iconfont icon-weixin" id="weixin"></i></a>
                     <a href="<?php echo \think\Config::get('auth.weibourl'); ?>" target="_blank"><i class="iconfont icon-weibo"></i></a>
@@ -228,7 +229,7 @@
             <div class="col-md-3 ">
                 <h4>程序相关</h4>
                 <p class="foot-box">
-                    <i class="iconfont icon-group"></i>&nbsp;群：&nbsp;<a href="<?php echo \think\Config::get('auth.qqjoin'); ?>" target="_blank" class="foot-my">
+                    <i class="iconfont icon-group"></i>&nbsp;qq：&nbsp;<a href="<?php echo \think\Config::get('auth.qqjoin'); ?>" target="_blank" class="foot-my">
                     <strong><?php echo \think\Config::get('auth.qqgroup'); ?></strong>
                 </a>
                     <span class="foot-box-r">
@@ -239,7 +240,7 @@
                 <p class="foot-box">
                     <i class="iconfont icon-program"></i>&nbsp;程序：&nbsp;<?php echo \think\Config::get('auth.blogname'); ?>
                     <span class="foot-box-r">
-						<i class="iconfont icon-version"></i>&nbsp;版本：&nbsp;Beta <?php echo $systeminfo['sys_version']; ?>
+						<i class="iconfont icon-version"></i>&nbsp;版本：&nbsp; <?php echo $systeminfo['sys_version']; ?>
                     </span>
                 </p>
                 <p class="foot-box">

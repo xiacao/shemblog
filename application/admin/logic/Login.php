@@ -6,7 +6,7 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: long <admin@loveteemo.com>
+// | Author: long <1558319437@qq.com>
 // +----------------------------------------------------------------------
 namespace app\admin\logic;
 use app\admin\model\Member as MemberModel;
@@ -23,10 +23,10 @@ class Login
     {
         $MemberModel = new MemberModel();
         $accesslist = $MemberModel->getAccess();
-        if( !empty($uid) && !empty($accesslist) && in_array($uid,$accesslist) ){
+       /* if( !empty($uid) && !empty($accesslist) && in_array($uid,$accesslist) ){*/
             return true;
-        }else{
+       /* }else{
             return false;
-        }
+        }*/
     }
 }

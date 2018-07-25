@@ -6,7 +6,7 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: long <admin@loveteemo.com>
+// | Author: long <1558319437@qq.com>
 // +----------------------------------------------------------------------
 namespace app\admin\controller;
 use app\admin\controller\Auth;
@@ -23,12 +23,15 @@ class Article extends Auth
 	 * 添加文章
 	 * @return array
 	 */
+
 	public function add()
 	{
 		if(request()->isAjax()){
-			$data = request()->param();
+			
+			$data = input("post.");//**/
 			$AtricleLogic = new AtricleLogic();
 			$result = $AtricleLogic->validata($data);
+			//dump($result['err']);
 			if($result['err']!=0){
 				return $result;
 			}
@@ -39,6 +42,7 @@ class Article extends Auth
 				return ["err"=>1,"msg"=>"添加文章时发生错误","data"=>""];
 			}
 		}else{
+
 			$MenuModel	= new MenuModel();
 			$menulist	= $MenuModel::where('menu_parent','neq','0')->select();
 			$this->assign('menulist',$menulist);

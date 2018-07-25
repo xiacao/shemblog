@@ -1,0 +1,310 @@
+[ 2018-07-23T13:46:03+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] localhost:8080/ [运行时间：0.369056s][吞吐率：2.71req/s] [内存消耗：3,473.75kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\shemblog\framework\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => 'text/html, application/xhtml+xml, image/jxr, */*',
+  'accept-language' => 'zh-CN',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'localhost:8080',
+  'connection' => 'Keep-Alive',
+  'cookie' => 'Hm_lvt_82116c626a8d504a5c0675073362ef6f=1525916050; UM_distinctid=16347de14ab1ef-0b02fb2ac64607-3c604504-100200-16347de14ac41c; CNZZDATA1253899479=435784927-1525919125-%7C1525919125; Phpstorm-65b66e1f=59d52e21-acb5-4fa7-9e2d-76485d6aef35; pgv_pvid=1678863094',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp64\www\shemblog\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\shemblog\public/../application/index\view\index_index.html [ array (
+  0 => 'menuinfo',
+  1 => 'systeminfo',
+  2 => 'bannerlist',
+  3 => 'siderdata',
+  4 => 'footdata',
+  5 => 'tips',
+  6 => 'indexdata',
+  7 => 'title',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.026322s ] mysql:dbname=dbname;host=localhost;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_menu` [ RunTime:0.054429s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_menu` WHERE  `menu_view` = 1 ORDER BY menu_sort [ RunTime:0.006398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_system` [ RunTime:0.004844s ]
+[ sql ] [ SQL ] UPDATE `lt_system`  SET `sys_hits`=sys_hits+1  WHERE  `sys_id` = 1 [ RunTime:0.008689s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_system` LIMIT 1 [ RunTime:0.000996s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_banner` [ RunTime:0.004593s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_banner` WHERE  `ban_view` = 1 [ RunTime:0.001452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_article` [ RunTime:0.006281s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_keyword` FROM `lt_article` WHERE  (  art_view != 0 ) ORDER BY art_hit desc [ RunTime:0.001073s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view > 0 and art_down = 0  ) [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (17,12,15)  AND `art_down` = 0 [ RunTime:0.001238s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_comment` [ RunTime:0.005005s ]
+[ sql ] [ SQL ] SELECT `ac`.`com_id`,`ac`.`com_artid`,`ac`.`com_userid`,`m`.`mem_img`,`m`.`mem_name`,`ac`.`com_content`,`a`.`art_down` FROM `lt_comment` `ac` INNER JOIN `lt_article` `a` ON `a`.`art_id`=ac.com_artid and a.art_view > 0 INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`ac`.`com_userid` WHERE  (  ac.com_view = 1 and ac.com_artid > 0 ) ORDER BY ac.com_id desc LIMIT 5 [ RunTime:0.008943s ]
+[ sql ] [ SQL ] SELECT `c`.`com_id`,`c`.`com_content`,`m`.`mem_name`,`m`.`mem_img` FROM `lt_comment` `c` INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`c`.`com_userid` WHERE  `com_artid` = 0 ORDER BY com_id desc LIMIT 5 [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_hit`,`art_title` FROM `lt_article` ORDER BY art_hit desc LIMIT 8 [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_article` WHERE  (  art_view > 0 ) LIMIT 1 [ RunTime:0.001678s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view = 1 and com_artid != 0 ) LIMIT 1 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view= 1 and com_artid = 0 ) LIMIT 1 [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view = 2 and art_down = 0  ) [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (15,19,4,17)  AND `art_down` = 0 [ RunTime:0.000709s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_link` [ RunTime:0.007596s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_link` WHERE  `link_view` = 1 LIMIT 1 [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_title` FROM `lt_article` WHERE  `art_down` = 1 ORDER BY art_downloadnums desc LIMIT 4 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_title`,`art_img`,`art_remark`,`art_keyword`,`art_view`,`art_hit`,`menu_name`,`art_original`,`nums` FROM `lt_article` LEFT JOIN (select count(*) nums,com_artid from lt_comment group by com_artid) c ON `c`.`com_artid`=`lt_article`.`art_id` INNER JOIN `lt_menu` `m` ON `m`.`menu_id`=`lt_article`.`art_pid` WHERE  (  art_view > 0 ) ORDER BY art_id desc LIMIT 0,5 [ RunTime:0.001134s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_tip` [ RunTime:0.007049s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_tip` WHERE  `tip_view` = 1 [ RunTime:0.000622s ]
+
+---------------------------------------------------------------
+[ 2018-07-23T13:46:06+08:00 ] 127.0.0.1 127.0.0.1 GET /article-19.html
+[ log ] localhost:8080/article-19.html [运行时间：0.265000s][吞吐率：3.77req/s] [内存消耗：3,470.26kb] [文件加载：56]
+[ info ] [ LANG ] D:\wamp64\www\shemblog\framework\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Article',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept' => 'text/html, application/xhtml+xml, image/jxr, */*',
+  'referer' => 'http://localhost:8080/',
+  'accept-language' => 'zh-CN',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'localhost:8080',
+  'connection' => 'Keep-Alive',
+  'cookie' => 'Hm_lvt_82116c626a8d504a5c0675073362ef6f=1525916050; UM_distinctid=16347de14ab1ef-0b02fb2ac64607-3c604504-100200-16347de14ac41c; CNZZDATA1253899479=435784927-1525919125-%7C1525919125; Phpstorm-65b66e1f=59d52e21-acb5-4fa7-9e2d-76485d6aef35; pgv_pvid=1678863094; PHPSESSID=s6naq5ltg11no7dm01imqr6rl4',
+)
+[ info ] [ PARAM ] array (
+  'id' => '19',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Article->index[ D:\wamp64\www\shemblog\application\index\controller\Article.php ]
+[ info ] [ VIEW ] D:\wamp64\www\shemblog\public/../application/index\view\article_index.html [ array (
+  0 => 'menuinfo',
+  1 => 'systeminfo',
+  2 => 'bannerlist',
+  3 => 'siderdata',
+  4 => 'footdata',
+  5 => 'other',
+  6 => 'articledata',
+  7 => 'articlecommondata',
+  8 => 'title',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001791s ] mysql:dbname=dbname;host=localhost;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_menu` [ RunTime:0.005381s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_menu` WHERE  `menu_view` = 1 ORDER BY menu_sort [ RunTime:0.001382s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_system` [ RunTime:0.003336s ]
+[ sql ] [ SQL ] UPDATE `lt_system`  SET `sys_hits`=sys_hits+1  WHERE  `sys_id` = 1 [ RunTime:0.002630s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_system` LIMIT 1 [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_banner` [ RunTime:0.005617s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_banner` WHERE  `ban_view` = 1 [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_article` [ RunTime:0.006354s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_keyword` FROM `lt_article` WHERE  (  art_view != 0 ) ORDER BY art_hit desc [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view > 0 and art_down = 0  ) [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (16,18,19)  AND `art_down` = 0 [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_comment` [ RunTime:0.005608s ]
+[ sql ] [ SQL ] SELECT `ac`.`com_id`,`ac`.`com_artid`,`ac`.`com_userid`,`m`.`mem_img`,`m`.`mem_name`,`ac`.`com_content`,`a`.`art_down` FROM `lt_comment` `ac` INNER JOIN `lt_article` `a` ON `a`.`art_id`=ac.com_artid and a.art_view > 0 INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`ac`.`com_userid` WHERE  (  ac.com_view = 1 and ac.com_artid > 0 ) ORDER BY ac.com_id desc LIMIT 5 [ RunTime:0.005147s ]
+[ sql ] [ SQL ] SELECT `c`.`com_id`,`c`.`com_content`,`m`.`mem_name`,`m`.`mem_img` FROM `lt_comment` `c` INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`c`.`com_userid` WHERE  `com_artid` = 0 ORDER BY com_id desc LIMIT 5 [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_hit`,`art_title` FROM `lt_article` ORDER BY art_hit desc LIMIT 8 [ RunTime:0.001549s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_article` WHERE  (  art_view > 0 ) LIMIT 1 [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view = 1 and com_artid != 0 ) LIMIT 1 [ RunTime:0.001396s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view= 1 and com_artid = 0 ) LIMIT 1 [ RunTime:0.001186s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view = 2 and art_down = 0  ) [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (16,17,15,19)  AND `art_down` = 0 [ RunTime:0.000832s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_link` [ RunTime:0.003256s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_link` WHERE  `link_view` = 1 LIMIT 1 [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_title` FROM `lt_article` WHERE  `art_down` = 1 ORDER BY art_downloadnums desc LIMIT 4 [ RunTime:0.000455s ]
+[ sql ] [ SQL ] UPDATE `lt_article`  SET `art_hit`=art_hit+1  WHERE  `art_id` = 19  AND `art_view` > 0 [ RunTime:0.003479s ]
+[ sql ] [ SQL ] SELECT `a`.*,`m`.`menu_name` FROM `lt_article` `a` INNER JOIN `lt_menu` `m` ON `m`.`menu_id`=`a`.`art_pid` WHERE  `art_id` = 19  AND `art_view` > 0 LIMIT 1 [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_comment` `ac` INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`ac`.`com_userid` WHERE  `ac`.`com_artid` = '19'  AND `com_view` = 1 ORDER BY ac.com_id desc LIMIT 0,5 [ RunTime:0.002228s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  (  art_id < 19 and art_view in (1,2) and art_pid != 99 ) ORDER BY art_id desc LIMIT 1 [ RunTime:0.000849s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  (  art_id > 19 and art_view in (1,2) and art_pid != 99 ) ORDER BY art_id asc LIMIT 1 [ RunTime:0.000746s ]
+
+---------------------------------------------------------------
+[ 2018-07-23T13:46:11+08:00 ] 127.0.0.1 127.0.0.1 GET /article-18.html
+[ log ] localhost:8080/article-18.html [运行时间：0.260083s][吞吐率：3.84req/s] [内存消耗：3,474.63kb] [文件加载：56]
+[ info ] [ LANG ] D:\wamp64\www\shemblog\framework\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Article',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept' => 'text/html, application/xhtml+xml, image/jxr, */*',
+  'referer' => 'http://localhost:8080/',
+  'accept-language' => 'zh-CN',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'localhost:8080',
+  'connection' => 'Keep-Alive',
+  'cookie' => 'Hm_lvt_82116c626a8d504a5c0675073362ef6f=1525916050; UM_distinctid=16347de14ab1ef-0b02fb2ac64607-3c604504-100200-16347de14ac41c; CNZZDATA1253899479=435784927-1525919125-%7C1525919125; Phpstorm-65b66e1f=59d52e21-acb5-4fa7-9e2d-76485d6aef35; pgv_pvid=1678863094; PHPSESSID=s6naq5ltg11no7dm01imqr6rl4',
+)
+[ info ] [ PARAM ] array (
+  'id' => '18',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Article->index[ D:\wamp64\www\shemblog\application\index\controller\Article.php ]
+[ info ] [ VIEW ] D:\wamp64\www\shemblog\public/../application/index\view\article_index.html [ array (
+  0 => 'menuinfo',
+  1 => 'systeminfo',
+  2 => 'bannerlist',
+  3 => 'siderdata',
+  4 => 'footdata',
+  5 => 'other',
+  6 => 'articledata',
+  7 => 'articlecommondata',
+  8 => 'title',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002066s ] mysql:dbname=dbname;host=localhost;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_menu` [ RunTime:0.006874s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_menu` WHERE  `menu_view` = 1 ORDER BY menu_sort [ RunTime:0.000869s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_system` [ RunTime:0.005672s ]
+[ sql ] [ SQL ] UPDATE `lt_system`  SET `sys_hits`=sys_hits+1  WHERE  `sys_id` = 1 [ RunTime:0.001992s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_system` LIMIT 1 [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_banner` [ RunTime:0.004555s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_banner` WHERE  `ban_view` = 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_article` [ RunTime:0.003115s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_keyword` FROM `lt_article` WHERE  (  art_view != 0 ) ORDER BY art_hit desc [ RunTime:0.000944s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view > 0 and art_down = 0  ) [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (12,16,4)  AND `art_down` = 0 [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_comment` [ RunTime:0.007169s ]
+[ sql ] [ SQL ] SELECT `ac`.`com_id`,`ac`.`com_artid`,`ac`.`com_userid`,`m`.`mem_img`,`m`.`mem_name`,`ac`.`com_content`,`a`.`art_down` FROM `lt_comment` `ac` INNER JOIN `lt_article` `a` ON `a`.`art_id`=ac.com_artid and a.art_view > 0 INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`ac`.`com_userid` WHERE  (  ac.com_view = 1 and ac.com_artid > 0 ) ORDER BY ac.com_id desc LIMIT 5 [ RunTime:0.003571s ]
+[ sql ] [ SQL ] SELECT `c`.`com_id`,`c`.`com_content`,`m`.`mem_name`,`m`.`mem_img` FROM `lt_comment` `c` INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`c`.`com_userid` WHERE  `com_artid` = 0 ORDER BY com_id desc LIMIT 5 [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_hit`,`art_title` FROM `lt_article` ORDER BY art_hit desc LIMIT 8 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_article` WHERE  (  art_view > 0 ) LIMIT 1 [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view = 1 and com_artid != 0 ) LIMIT 1 [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view= 1 and com_artid = 0 ) LIMIT 1 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view = 2 and art_down = 0  ) [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (17,4,12,15)  AND `art_down` = 0 [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_link` [ RunTime:0.002998s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_link` WHERE  `link_view` = 1 LIMIT 1 [ RunTime:0.000338s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_title` FROM `lt_article` WHERE  `art_down` = 1 ORDER BY art_downloadnums desc LIMIT 4 [ RunTime:0.000330s ]
+[ sql ] [ SQL ] UPDATE `lt_article`  SET `art_hit`=art_hit+1  WHERE  `art_id` = 18  AND `art_view` > 0 [ RunTime:0.003180s ]
+[ sql ] [ SQL ] SELECT `a`.*,`m`.`menu_name` FROM `lt_article` `a` INNER JOIN `lt_menu` `m` ON `m`.`menu_id`=`a`.`art_pid` WHERE  `art_id` = 18  AND `art_view` > 0 LIMIT 1 [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_comment` `ac` INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`ac`.`com_userid` WHERE  `ac`.`com_artid` = '18'  AND `com_view` = 1 ORDER BY ac.com_id desc LIMIT 0,5 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  (  art_id < 18 and art_view in (1,2) and art_pid != 99 ) ORDER BY art_id desc LIMIT 1 [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  (  art_id > 18 and art_view in (1,2) and art_pid != 99 ) ORDER BY art_id asc LIMIT 1 [ RunTime:0.000581s ]
+
+---------------------------------------------------------------
+[ 2018-07-23T13:46:19+08:00 ] 127.0.0.1 127.0.0.1 GET /article-16.html
+[ log ] localhost:8080/article-16.html [运行时间：0.294881s][吞吐率：3.39req/s] [内存消耗：3,474.63kb] [文件加载：56]
+[ info ] [ LANG ] D:\wamp64\www\shemblog\framework\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'Article',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept' => 'text/html, application/xhtml+xml, image/jxr, */*',
+  'referer' => 'http://localhost:8080/',
+  'accept-language' => 'zh-CN',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'localhost:8080',
+  'connection' => 'Keep-Alive',
+  'cookie' => 'Hm_lvt_82116c626a8d504a5c0675073362ef6f=1525916050; UM_distinctid=16347de14ab1ef-0b02fb2ac64607-3c604504-100200-16347de14ac41c; CNZZDATA1253899479=435784927-1525919125-%7C1525919125; Phpstorm-65b66e1f=59d52e21-acb5-4fa7-9e2d-76485d6aef35; pgv_pvid=1678863094; PHPSESSID=s6naq5ltg11no7dm01imqr6rl4',
+)
+[ info ] [ PARAM ] array (
+  'id' => '16',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Article->index[ D:\wamp64\www\shemblog\application\index\controller\Article.php ]
+[ info ] [ VIEW ] D:\wamp64\www\shemblog\public/../application/index\view\article_index.html [ array (
+  0 => 'menuinfo',
+  1 => 'systeminfo',
+  2 => 'bannerlist',
+  3 => 'siderdata',
+  4 => 'footdata',
+  5 => 'other',
+  6 => 'articledata',
+  7 => 'articlecommondata',
+  8 => 'title',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002225s ] mysql:dbname=dbname;host=localhost;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_menu` [ RunTime:0.003483s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_menu` WHERE  `menu_view` = 1 ORDER BY menu_sort [ RunTime:0.000892s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_system` [ RunTime:0.003708s ]
+[ sql ] [ SQL ] UPDATE `lt_system`  SET `sys_hits`=sys_hits+1  WHERE  `sys_id` = 1 [ RunTime:0.002031s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_system` LIMIT 1 [ RunTime:0.001408s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_banner` [ RunTime:0.003813s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_banner` WHERE  `ban_view` = 1 [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_article` [ RunTime:0.005940s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_keyword` FROM `lt_article` WHERE  (  art_view != 0 ) ORDER BY art_hit desc [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view > 0 and art_down = 0  ) [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (16,4,12)  AND `art_down` = 0 [ RunTime:0.000683s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_comment` [ RunTime:0.007504s ]
+[ sql ] [ SQL ] SELECT `ac`.`com_id`,`ac`.`com_artid`,`ac`.`com_userid`,`m`.`mem_img`,`m`.`mem_name`,`ac`.`com_content`,`a`.`art_down` FROM `lt_comment` `ac` INNER JOIN `lt_article` `a` ON `a`.`art_id`=ac.com_artid and a.art_view > 0 INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`ac`.`com_userid` WHERE  (  ac.com_view = 1 and ac.com_artid > 0 ) ORDER BY ac.com_id desc LIMIT 5 [ RunTime:0.003964s ]
+[ sql ] [ SQL ] SELECT `c`.`com_id`,`c`.`com_content`,`m`.`mem_name`,`m`.`mem_img` FROM `lt_comment` `c` INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`c`.`com_userid` WHERE  `com_artid` = 0 ORDER BY com_id desc LIMIT 5 [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_hit`,`art_title` FROM `lt_article` ORDER BY art_hit desc LIMIT 8 [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_article` WHERE  (  art_view > 0 ) LIMIT 1 [ RunTime:0.001148s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view = 1 and com_artid != 0 ) LIMIT 1 [ RunTime:0.001128s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view= 1 and com_artid = 0 ) LIMIT 1 [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view = 2 and art_down = 0  ) [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (12,17,15,16)  AND `art_down` = 0 [ RunTime:0.000789s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_link` [ RunTime:0.006503s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_link` WHERE  `link_view` = 1 LIMIT 1 [ RunTime:0.001801s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_title` FROM `lt_article` WHERE  `art_down` = 1 ORDER BY art_downloadnums desc LIMIT 4 [ RunTime:0.000644s ]
+[ sql ] [ SQL ] UPDATE `lt_article`  SET `art_hit`=art_hit+1  WHERE  `art_id` = 16  AND `art_view` > 0 [ RunTime:0.002670s ]
+[ sql ] [ SQL ] SELECT `a`.*,`m`.`menu_name` FROM `lt_article` `a` INNER JOIN `lt_menu` `m` ON `m`.`menu_id`=`a`.`art_pid` WHERE  `art_id` = 16  AND `art_view` > 0 LIMIT 1 [ RunTime:0.000968s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_comment` `ac` INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`ac`.`com_userid` WHERE  `ac`.`com_artid` = '16'  AND `com_view` = 1 ORDER BY ac.com_id desc LIMIT 0,5 [ RunTime:0.001482s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  (  art_id < 16 and art_view in (1,2) and art_pid != 99 ) ORDER BY art_id desc LIMIT 1 [ RunTime:0.001774s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  (  art_id > 16 and art_view in (1,2) and art_pid != 99 ) ORDER BY art_id asc LIMIT 1 [ RunTime:0.002261s ]
+
+---------------------------------------------------------------

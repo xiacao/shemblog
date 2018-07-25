@@ -6,7 +6,7 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: long <admin@loveteemo.com>
+// | Author: long <1558319437@qq.com>
 // +----------------------------------------------------------------------
 namespace app\admin\logic;
 use app\admin\model\Article as ArticleModel;
@@ -22,7 +22,7 @@ class Article
 		$data['art_img']	= makeImg($data['art_img']);
 		$data['art_addtime']= time();
 		$data['art_from']   = getOs();
-		$data['art_city']   = (request()->ip() == '127.0.0.1')?"本机地址":getCity(request()->ip());
+		$data['art_city']   = (request()->ip() == '127.0.0.1:8080')?"本机地址":getCity(request()->ip());
 		$data['art_down']   = (isset($data['art_file'])) ? 1 : 0 ;
 		$ArticleModel = new ArticleModel();
 		$res = $ArticleModel->add($data);
