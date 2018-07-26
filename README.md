@@ -1,4 +1,5 @@
 # shemblog
+## 地址 http://shem.xin
   shemblog来源于青春博客，初始版本在青春博客上进行小修小改，源码在GitHub，每1-4周会更新一次。
 
 shemblog-来历
